@@ -24,7 +24,7 @@ export default function Home() {
             <p className="text-gray-600 mb-4">
               히라가나 문자를 배우고 연습합니다.
             </p>
-            <ProgressBar progress={progress.hiragana} />
+            <ProgressBar progress={progress.hiragana} label="학습 진도" />
           </motion.div>
         </Link>
 
@@ -37,7 +37,7 @@ export default function Home() {
             <p className="text-gray-600 mb-4">
               카타카나 문자를 배우고 연습합니다.
             </p>
-            <ProgressBar progress={progress.katakana} />
+            <ProgressBar progress={progress.katakana} label="학습 진도" />
           </motion.div>
         </Link>
 
@@ -50,7 +50,7 @@ export default function Home() {
             <p className="text-gray-600 mb-4">
               기초 일본어 단어를 학습합니다.
             </p>
-            <ProgressBar progress={progress.vocabulary} />
+            <ProgressBar progress={progress.vocabulary} label="학습 진도" />
           </motion.div>
         </Link>
 
@@ -63,7 +63,7 @@ export default function Home() {
             <p className="text-gray-600 mb-4">
               기초 일본어 문장을 학습합니다.
             </p>
-            <ProgressBar progress={progress.sentences} />
+            <ProgressBar progress={progress.sentences} label="학습 진도" />
           </motion.div>
         </Link>
       </div>
