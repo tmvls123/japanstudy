@@ -114,7 +114,7 @@ export default function SentencesPage() {
                 {showHiragana ? currentSentence.japanese : currentSentence.hiragana}
               </div>
               <div className="text-gray-400 text-xs mt-1">
-                {currentSentence.pronunciation || currentSentence.romanization}
+                {currentSentence.hiragana}
               </div>
             </div>
           }
@@ -170,7 +170,7 @@ export default function SentencesPage() {
             >
               <span className="text-lg mb-1">{showHiragana ? sentence.hiragana : sentence.japanese}</span>
               <span className="text-sm text-gray-500">{showHiragana ? sentence.japanese : sentence.hiragana}</span>
-              <span className="text-xs text-gray-400 mb-2">{sentence.pronunciation || sentence.romanization}</span>
+              <span className="text-xs text-gray-400 mb-2">{sentence.hiragana}</span>
               <span className="text-gray-600">{sentence.korean}</span>
               <span className="text-sm text-gray-400 mt-2">#{sentence.category}</span>
               <button
