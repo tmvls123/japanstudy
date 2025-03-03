@@ -12,7 +12,7 @@ export default function SentencesPage() {
   const [selectedGroup, setSelectedGroup] = useState(0)
   const [currentIndex, setCurrentIndex] = useState(0)
   const [showHiragana, setShowHiragana] = useState(true)
-  const updateProgress = useProgressStore(state => state.updateProgress)
+  const { updateProgress } = useProgressStore()
 
   const currentGroup = SENTENCE_GROUPS[selectedGroup]
   const currentSentence = currentGroup.items[currentIndex]

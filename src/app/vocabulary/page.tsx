@@ -12,7 +12,7 @@ export default function VocabularyPage() {
   const [selectedGroup, setSelectedGroup] = useState(0)
   const [currentIndex, setCurrentIndex] = useState(0)
   const [showHiragana, setShowHiragana] = useState(true)
-  const updateProgress = useProgressStore(state => state.progress)
+  const { updateProgress } = useProgressStore()
 
   const currentGroup = VOCABULARY_GROUPS[selectedGroup]
   const currentWord = currentGroup.items[currentIndex]

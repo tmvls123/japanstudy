@@ -10,7 +10,7 @@ import { useProgressStore } from '../store/progressStore'
 export default function KatakanaPage() {
   const [selectedGroup, setSelectedGroup] = useState(0)
   const [currentIndex, setCurrentIndex] = useState(0)
-  const updateProgress = useProgressStore(state => state.updateProgress)
+  const { updateProgress } = useProgressStore()
 
   const currentGroup = KATAKANA_GROUPS[selectedGroup]
   const currentChar = currentGroup.characters[currentIndex]
