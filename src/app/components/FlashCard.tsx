@@ -1,12 +1,13 @@
 'use client'
 
+import { ReactNode } from 'react'
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Howl } from 'howler'
 
 interface FlashCardProps {
-  front: string
-  back: string
+  front: ReactNode
+  back: ReactNode
   sound?: string
 }
 
@@ -38,7 +39,7 @@ export default function FlashCard({ front, back, sound }: FlashCardProps) {
           className={`absolute w-full h-full flex items-center justify-center bg-white rounded-xl shadow-lg p-6 backface-hidden
             ${isFlipped ? 'opacity-0' : 'opacity-100'}`}
         >
-          <span className="text-9xl">{front}</span>
+          {front}
         </div>
 
         {/* 뒷면 */}
@@ -47,7 +48,7 @@ export default function FlashCard({ front, back, sound }: FlashCardProps) {
             ${isFlipped ? 'opacity-100' : 'opacity-0'}`}
           style={{ transform: 'rotateY(180deg)' }}
         >
-          <span className="text-7xl text-gray-700">{back}</span>
+          {back}
         </div>
       </motion.div>
     </div>
