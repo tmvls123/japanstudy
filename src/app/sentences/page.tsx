@@ -105,7 +105,19 @@ export default function SentencesPage() {
 
       <div className="mb-8">
         <FlashCard
-          front={showHiragana ? currentSentence.hiragana : currentSentence.japanese}
+          front={
+            <div className="text-center">
+              <div className="text-2xl mb-2">
+                {showHiragana ? currentSentence.hiragana : currentSentence.japanese}
+              </div>
+              <div className="text-gray-500 text-sm">
+                {showHiragana ? currentSentence.japanese : currentSentence.hiragana}
+              </div>
+              <div className="text-gray-400 text-xs mt-1">
+                {currentSentence.hiragana}
+              </div>
+            </div>
+          }
           back={currentSentence.korean}
         />
         <div className="flex justify-center mt-4">
@@ -156,8 +168,9 @@ export default function SentencesPage() {
               whileHover={{ scale: 1.02 }}
               onClick={() => handleSentenceSelect(currentGroup.items.indexOf(sentence))}
             >
-              <span className="text-lg mb-2">{showHiragana ? sentence.hiragana : sentence.japanese}</span>
-              <span className="text-base mb-1 text-gray-600">{showHiragana ? sentence.japanese : sentence.hiragana}</span>
+              <span className="text-lg mb-1">{showHiragana ? sentence.hiragana : sentence.japanese}</span>
+              <span className="text-sm text-gray-500">{showHiragana ? sentence.japanese : sentence.hiragana}</span>
+              <span className="text-xs text-gray-400 mb-2">{sentence.hiragana}</span>
               <span className="text-gray-600">{sentence.korean}</span>
               <span className="text-sm text-gray-400 mt-2">#{sentence.category}</span>
               <button

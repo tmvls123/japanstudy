@@ -105,7 +105,19 @@ export default function VocabularyPage() {
 
       <div className="mb-8">
         <FlashCard
-          front={showHiragana ? currentWord.hiragana : currentWord.japanese}
+          front={
+            <div className="text-center">
+              <div className="text-4xl mb-2">
+                {showHiragana ? currentWord.hiragana : currentWord.japanese}
+              </div>
+              <div className="text-gray-500 text-sm">
+                {showHiragana ? currentWord.japanese : currentWord.hiragana}
+              </div>
+              <div className="text-gray-400 text-xs mt-1">
+                {currentWord.hiragana}
+              </div>
+            </div>
+          }
           back={currentWord.korean}
         />
         <div className="flex justify-center mt-4">
@@ -157,7 +169,8 @@ export default function VocabularyPage() {
               onClick={() => handleWordSelect(currentGroup.items.indexOf(word))}
             >
               <span className="text-2xl mb-1">{showHiragana ? word.hiragana : word.japanese}</span>
-              <span className="text-lg mb-1 text-gray-600">{showHiragana ? word.japanese : word.hiragana}</span>
+              <span className="text-sm text-gray-500">{showHiragana ? word.japanese : word.hiragana}</span>
+              <span className="text-xs text-gray-400 mb-2">{word.hiragana}</span>
               <span className="text-gray-600">{word.korean}</span>
               <button
                 onClick={(e) => speak(showHiragana ? word.hiragana : word.japanese, e)}
