@@ -114,7 +114,7 @@ export default function VocabularyPage() {
                 {showHiragana ? currentWord.japanese : currentWord.hiragana}
               </div>
               <div className="text-gray-400 text-xs mt-1">
-                {currentWord.pronunciation || currentWord.romanization}
+                {currentWord.hiragana}
               </div>
             </div>
           }
@@ -170,7 +170,7 @@ export default function VocabularyPage() {
             >
               <span className="text-2xl mb-1">{showHiragana ? word.hiragana : word.japanese}</span>
               <span className="text-sm text-gray-500">{showHiragana ? word.japanese : word.hiragana}</span>
-              <span className="text-xs text-gray-400 mb-2">{word.pronunciation || word.romanization}</span>
+              <span className="text-xs text-gray-400 mb-2">{word.hiragana}</span>
               <span className="text-gray-600">{word.korean}</span>
               <button
                 onClick={(e) => speak(showHiragana ? word.hiragana : word.japanese, e)}
